@@ -1,0 +1,8 @@
+
+Remount the filesystem, which can be done either with a reboot or by executing:
+	mount -v -o remount 
+
+
+
+In my company , recently we have observed that redploying of the composite isn;t refreshing the data in MDS.
+As a result we were asked to undeploy , delete WLS cache and redeploy again 

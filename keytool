@@ -1,0 +1,77 @@
+--------------------------------------------
+## keytool
+---------
+Java keytool is a key and certificate management utility. 
+Java Keytool stores the keys and certificates in what is called a keystore.
+A Keytool keystore contains the private key and any certificates necessary to complete a chain of trust and establish the trustworthiness of the primary certificate.
+
+------------------------------------------------
+Keytool EXAMPLES
+------------------------------------------------
+
+------------------------------------------
+#1: Generate a Java keystore and key pair
+------------------------------------------
+keytool -genkey -alias mydomain -keyalg RSA -keystore keystore.jks -keysize 2048
+
+------------------------------------------
+#2: Generate a certificate signing request (CSR) for an existing Java keystore
+------------------------------------------
+keytool -certreq -alias mydomain -keystore keystore.jks -file mydomain.csr
+
+------------------------------------------
+#3: Import a root or intermediate CA certificate to an existing Java keystore 
+------------------------------------------
+keytool -import -trustcacerts -alias root -file Thawte.crt -keystore keystore.jks
+
+------------------------------------------
+#4: Import a signed primary certificate to an existing Java keystore 
+------------------------------------------
+keytool -import -trustcacerts -alias mydomain -file mydomain.crt -keystore keystore.jks
+
+------------------------------------------
+#5: Generate a keystore and self-signed certificate  
+------------------------------------------
+keytool -genkey -keyalg RSA -alias selfsigned -keystore keystore.jks -storepass password -validity 360 -keysize 2048
+
+------------------------------------------
+#6: Check a stand-alone certificate  
+------------------------------------------
+keytool -printcert -v -file mydomain.crt
+
+------------------------------------------
+#7: Check which certificates are in a Java keystore
+------------------------------------------
+keytool -list -v -keystore keystore.jks
+
+------------------------------------------
+#8: Check a particular keystore entry using an alias 
+------------------------------------------
+keytool -list -v -keystore keystore.jks -alias mydomain
+
+------------------------------------------
+#9: Delete a certificate from a Java Keytool keystore
+------------------------------------------
+keytool -delete -alias mydomain -keystore keystore.jks
+
+------------------------------------------
+#10: change a Java keystore password 
+------------------------------------------
+keytool -storepass password -new new_storepass -keystore keystore.jks
+
+------------------------------------------
+#11: Export a certificate from a keystore
+note: "keytool" does not support key exporting function
+-rfc will export the cert in Base64 form rather than Binary form
+------------------------------------------
+keytool -export -alias mydomain -file mydomain.crt -keystore keystore.jks -rfc
+
+------------------------------------------
+#12: List Trusted CA Certs 
+------------------------------------------
+keytool -list -v -keystore $JAVA_HOME/jre/lib/security/cacerts
+
+------------------------------------------
+#13: Import New CA into Trusted Certs
+------------------------------------------
+keytool -import -trustcacerts -file /path/to/ca/ca.pem -alias CA_ALIAS -keystore $JAVA_HOME/jre/lib/security/cacerts

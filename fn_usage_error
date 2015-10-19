@@ -1,0 +1,20 @@
+fn_usage_error()
+{
+cat <<!!LABEL >&2
+Usage: -addif <interface-name> <ip-address> [netmask]
+       -removeif <interface-name> <ip-address>
+       -listif <interface-name>
+
+      'addif' adds <ip-address> to next available sub-interface of <interface-name>.
+      'removeif' removes <ip-address> from sub-interface of <interface-name>.
+      'listif' lists last used sub-interface of <interface-name> and its corresponding <ip-address>
+        for HP-UX platform AND it lists <interface-name> and its corresponding <ip-address> for other platforms.
+
+      To find the list of interfaces, use your OS utility.  On Unix-like
+      systems, '/sbin/ifconfig' or '/usr/sbin/ifconfig' will list all the interfaces.
+
+      On Windows 2000 or later systems, use the following command to list the interface names-
+      netsh interface show interface.
+!!LABEL
+exit 1
+}

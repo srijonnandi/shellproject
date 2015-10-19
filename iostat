@@ -1,0 +1,28 @@
+	--------------------------------------------
+	## iostat (io stat)
+	---------
+	What’s happening? Prints CPU and I/O statistics
+	Usage : To review CPU usage , and I/O load for all devices including SWAP partion
+
+	(!) To see which device is used as swap space , use 
+	->swapon -s
+	->cat /proc/swap
+
+	------------------------------------------------
+	IOSTAT EXAMPLES
+	------------------------------------------------
+
+	------------------------------------
+	# 1 Show cpu usage
+	------------------------------------
+	iostat -c
+
+	avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+    5.68      0.00    0.52    2.03    0.00   91.76
+
+	------------------------------------
+	# 2 Show network usage
+	------------------------------------
+	iostat -n
+
+	

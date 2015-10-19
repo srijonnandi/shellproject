@@ -1,0 +1,7 @@
+###netstat -tulpn 
+=========================================
+	What’s happening? will show processes and the ports it's listening to
+	
+	ls -l /proc/<PID>/exe
+	---------------------------------------------
+	What’s happening? This is to further check what is being executed by the process	

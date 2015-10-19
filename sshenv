@@ -1,0 +1,29 @@
+	---------------------------------------------
+	##SSHENV
+	----------
+	  1 # .bash_profile
+	  2
+	  3 # Get the aliases and functions
+	  4 if [ -f ~/.bashrc ]; then
+	  5     . ~/.bashrc
+	  6 fi
+	  7
+	  8 # User specific environment and startup programs
+	  9 source $HOME/.ansible_profile
+	 10
+	 11 PATH=$PATH:$HOME/bin
+	 12
+	 13 export PATH
+
+	$ type sshenv
+	sshenv is a function
+	sshenv ()
+	{
+	    _ENV=$1;
+	    _COMPONENT=$2;
+	    _COMMAND=$3;
+	    ssh -i ~/rsa_keys/obpdev01-id_rsa "obpod${_ENV}${_COMPONENT}1.int.corp.sun" $_COMMAND;
+	    unset _ENV;
+	    unset _COMPONENT;
+	    unset _COMMAND
+	}

@@ -1,0 +1,10 @@
+	Set the common grep options through 
+	export GREP_OPTIONS='--color=auto'
+
+	fgrep -i "Search String" logs/*.log
+	---------------------------------------------
+	What’s happening?file grep to search for a text in file
+
+	egrep -i "Search String1| Search String2" logs/*.log
+	---------------------------------------------
+	What’s happening?extended grep to search using regular expression

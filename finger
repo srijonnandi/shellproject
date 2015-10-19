@@ -1,0 +1,6 @@
+	--------------------------------------------
+	## finger
+	---------
+	What’s happening? will show users currently logged int
+
+	finger <servername>

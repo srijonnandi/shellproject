@@ -1,0 +1,46 @@
+	--------------------------------------------
+	## vmstat (Virtual Machine stat)
+	---------
+	What’s happening? Prints CPU 
+	Usage : To see memory usage including swaps
+
+
+    Procs – r: Total number of processes waiting to run
+    Procs – b: Total number of busy processes
+    Memory – swpd: Used virtual memory
+    Memory – free: Free virtual memory
+    Memory – buff: Memory used as buffers
+    Memory – cache: Memory used as cache.
+    Swap – si: Memory swapped from disk (for every second)
+    Swap – so: Memory swapped to disk (for every second)
+    IO – bi: Blocks in. i.e blocks received from device (for every second)
+    IO – bo: Blocks out. i.e blocks sent to the device (for every second)
+    System – in: Interrupts per second
+    System – cs: Context switches
+    CPU – 
+    	us, CPU user time
+    	sy, system time
+    	id, idle time
+    	wa, wait time
+
+	--------------------------------
+	#1 vmstat – referesh stat every 2 secs
+	--------------------------------
+	vmstat 2
+
+	--------------------------------
+	#2 vmstat – Display statistics in a table format
+	--------------------------------
+	vmstat -s
+
+	--------------------------------
+	#3 vmstat – Display disk statistics
+	--------------------------------
+	vmstat -d
+
+	--------------------------------
+	#3 vmstat – Display memory slabwise breakup 
+	--------------------------------
+	vmstat -s
+
+

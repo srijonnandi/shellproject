@@ -1,0 +1,9 @@
+####PID - About
+=========================================
+	ls -l /proc/3813/cwd
+	---------------------------------------------
+	What’s happening? will show current working directory of a process
+	
+	ls -l /proc/3813/exe
+	---------------------------------------------
+	What’s happening? will show what is it executing currently

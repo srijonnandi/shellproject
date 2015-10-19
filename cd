@@ -1,0 +1,9 @@
+	--------------------------------------------
+	## cd
+	---------
+	What’s happening? Changes the current working directory to the given path
+	Some Examples:
+	cd ~/tmp => ~ indicates home directory and then into /tmp  
+	cd => Changes the working directory to home directory
+	cd - => CHange the working directory to previous one
+	cd ~<username> => Change the working directory to home of the given user

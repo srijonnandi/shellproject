@@ -1,0 +1,6 @@
+	--------------------------------------------
+	## find
+	---------
+	What’s happening? find is very powerful in terms of seraching the filesystem for files/dirs and executing actions on them
+	Some Examples
+	find -iname '*.sh' -type f -exec rm -f {} \;

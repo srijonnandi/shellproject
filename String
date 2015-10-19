@@ -1,0 +1,43 @@
+####String Manipulation - About
+=========================================
+	var="Welcome to the geekstuff"
+	echo ${#var}
+	---------------------------------------------
+	What’s happening? will show length of the string "var"
+
+	var="Welcome to the geekstuff"
+	echo ${var:15}
+	echo ${var:15:4}
+	---------------------------------------------
+	What’s happening? will substring from 15th character for next 4 chars
+
+
+	filename="bash.string.txt"
+	echo ${filename#*.}
+	echo ${filename%.*}
+	---------------------------------------------
+	What’s happening? "#" will delete all strings untill "." from the front of the given string
+					  "%" will delete all strings after "." from the back of the given string
+
+
+	filename="bash.string.txt"
+	echo "After deletion of longest match from front:" ${filename##*.}
+	echo "After deletion of longest match from back:" ${filename%%.*}
+	---------------------------------------------
+	What’s happening? deletes the longest match of $substring from front of $string
+					  deletes the longest match of $substring from back of $string
+
+	filename="bash.string.txt"
+	echo "After Replacement:" ${filename/str*./operations.}
+	---------------------------------------------
+	What’s happening?matches the pattern in the variable $string, and replace only the first match of the pattern with the replacement.
+							Replace all the matches use "//"
+							${string//pattern/replacement}
+
+
+	filename="/root/admin/monitoring/process.sh"
+	echo "Replaced at the beginning:" ${filename/#\/root/\/tmp}
+	echo "Replaced at the end": ${filename/%.*/.ksh}
+	---------------------------------------------
+	What’s happening? replaces with the replacement string, only when the pattern matches beginning of the $string
+					  replaces with the replacement string, only when the pattern matches at the end of the given $string

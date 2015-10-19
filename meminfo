@@ -1,0 +1,4 @@
+	--------------------------------------------
+	## cat /proc/meminfo
+	---------	
+	What’s happening? Prints memory info

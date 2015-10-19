@@ -1,0 +1,3 @@
+####fuser <PORT>/tcp 
+=========================================
+	What’s happening? This will tell which process is using the port through tcp

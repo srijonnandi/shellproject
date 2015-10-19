@@ -1,0 +1,22 @@
+
+
+Set History parameters
+
+export HISTTIMEFORMAT='%F %T '
+export HISTFILE = /dev/null   --> This will avoid all your actions from being saved into history after your session
+
+export HISTSIZE=450 --> control no. of lines to be captured
+export HISTSIZE=0 -->Disable the usage of history using HISTSIZE
+
+export HISTFILESIZE=450
+
+export HISTCONTROL=ignoredups  --> This will ignore duplicates only if they are consecutive commands
+
+export HISTCONTROL=erasedups  --> Erase duplicates across the whole history using HISTCONTROL
+
+export HISTCONTROL=ignorespace --> Force history not to remember a particular command using HISTCONTROL
+
+
+export HISTIGNORE="pwd:ls:ls -ltr:"  -->Ignore specific commands from the history using HISTIGNORE
+
+

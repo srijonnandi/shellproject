@@ -1,0 +1,21 @@
+###Extract / Zip a TAR.GZ File
+	
+	--------------------------------------------
+	##tar -xvzf yourfilename.tar.gz -C /home/newDir
+	---------
+	What’s happening? tar – is calling the tar program 
+		-x – extract 
+		-v - verbose will list what is being archived
+		-f – supplying filename on command line. 
+		-z – it’s gzipped (so omit the z if you merely have a .tar file) 
+
+		-C - Change directory before extract
+		
+	--------------------------------------------
+	##tar -cvzf yourfilename.tar.gz dbupgrade/*
+	---------
+	What’s happening? tar – is calling the tar program 
+		-c – Create archive
+		-v - verbose will list what is being archived
+		-f – supplying filename on command line.
+		-z – it’s gzipped (so omit the z if you merely need a .tar file)

@@ -1,0 +1,48 @@
+	---------	
+	## top
+	---------	
+	What’s happening? Current session details on 
+		-no. of users logged in
+		-load average
+		-uptime 
+		-current server time
+
+	Flags:
+		f	=> select the fields which we want to display
+		F 	=> Select the sort field
+		h 	=> help
+
+	Other forms:
+		htop
+		atop	
+
+	see also:
+		vmstat
+		iostat
+		mpstat
+
+=====================================================================================================================
+CONCEPT :
+The values reported for processes that are shown by default are not of much use either - their meaning is UNCLEAR or they are of NO PRACTICAL USE. 
+It is possible to change the columns shown using the f key to get some more useful values. However top is still only useful for rough analysis as it doesn't provide any details and does not account at all for sharing memory between processes.
+
+Explanation of some of the columns (some of which may be wrong though because of their confusing meaning and values): 
+
+•VIRT - the size of allocated address space. Not memory, but address space. This value in practice means next to nothing. When a process requests a large memory block from the system but uses only a small part of it, Under such a situation REAL USAGE will be LOW, VIRT will be HIGH.
+VIRT represents how much memory the program is able to access at the present moment. (Real memory in RAM , Shared Memory with other processes , Swap space and files in the disk for shared libraries)
+
+•RES - resident memory size, i.e. the memory that the process uses in RAM. 
+While this value has some practical value it is not that useful because it includes all memory this process possibly shares with other processes due to shared libraries 
+(e.g. KDE applications share large KDE libraries and the size of these libraries is included in RES of every such application). 
+Moreover SWAP is not included which additionally decreases the usefulness of this value.
+
+•SHR - the amount of memory that could be potentially shared with other processes. The meaning is somewhat unclear and this value is of little practical value and it is NOT USEFUL on its own.
+
+In the case of libraries, it does not necessarily mean that the entire library is resident. For example, if a program only uses a few functions in a library, the whole library space is mapped and will be counted in VIRT and SHR, but only the parts of the library file containing the functions being used will actually be loaded in and be counted under RES.
+
+•SWAP - the amount of SWAPPED OUT MEMORY - not only memory moved to the swap but also for example memory-mapped files, which again makes this value not very useful.
+
+•CODE - memory taken by executable code. Various tables used by the code (e.g. virtual tables) don't seem to be included though - not very useful.
+
+•DATA - it clearly does not mean what the manual page says and the actual meaning of the value is unclear.
+

@@ -1,0 +1,6 @@
+	--------------------------------------------
+	## pgrep
+	---------	
+	What’s happening? Search for anything within process list
+		pgrep -u <username>[,<username2>...] => will search of all pids owned by the given user
+		pgrep -u <username> <processname> => will print the pid of the given process owned by the given user

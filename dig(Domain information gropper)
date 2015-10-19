@@ -1,0 +1,6 @@
+	--------------------------------------------
+	## dig (Domain Information Gropper)
+	---------
+	What’s happening? Using dig command you can query DNS name servers for your DNS lookup related tasks
+
+	First read DNS record types to understand DIG response better

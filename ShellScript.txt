@@ -1,0 +1,25 @@
+
+###Administration
+dig - tbd
+watch - tbd
+openssl - tbd
+curl - tbd
+ping  - tbd
+soc
+iostat - Report Central Processing Unit (CPU) statistics and input/out-
+       put statistics for devices and partitions
+
+cat /proc/1234/smaps
+
+###Sync files
+dd - tbd
+
+###More about grep
+grep
+
+####Function in Bashrc
+fn_usage_error
+sshenv
+
+
+

@@ -1,0 +1,30 @@
+=========================================
+###Concepts
+	--------------------------------------------
+	## There are filedescriptors to represent three stream in unix
+	---------
+	&0 - stdin
+	&1 - stdout
+	&2 - stderr
+	Ex:
+	find -iname 'myfile*' &2>/dev/null -->stderr redirected to /dev/null
+
+	--------------------------------------------
+	## "login" or "non-login" shell session
+	---------
+	A login shell is a shell session that begins by authenticating the user
+	If you start a new shell session from within your authenticated session , by calling 'bash' it's called non-login shell session
+
+	--------------------------------------------
+	## "interactive" or "non-interactive" shell session
+	---------
+	An interactive shell session is a shell session that is attached to a terminal. A non-interactive shell session is one is not attached to a terminal session.
+	echo $TERM
+
+	--------------------------------------------
+	## Environmental Variables at Login
+	---------
+	login session : A session started as a login session will read configuration details from the /etc/profile file first. It will then look for the first login shell configuration file in the user's home directory to get user-specific configuration details.
+					It reads the first file that it can find out of ~/.bash_profile, ~/.bash_login, and ~/.profile and does not read any further files.
+	Non-login session : In contrast, a session defined as a non-login shell will read /etc/bash.bashrc and
+						then the user-specific ~/.bashrc file to build its environment.

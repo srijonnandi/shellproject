@@ -1,0 +1,91 @@
+	--------------------------------------------
+	##rsync
+	---------
+	# rsync <options> <source> <destination>
+
+	The source is always the first argument, and the destination is always the second
+	-a = archive , -z = zip , -v = verbose 
+	
+CONCEPT: 
+	ADAVANTAGES:
+		Speed : First time copies everything , next time one updates modified files
+		Security: allows encryption of data using ssh protocol during transfer
+		Less Bandwidth: rsync uses compression and decompression of data block by block at the sending and receiving end respectively.
+		One of the main feature of rsync is that it transfers only the changed block to the destination, instead of sending the whole file.
+EXAMPLES:
+	-------------------------------------------------------
+	# Synchronize Two Directories in a Local Server
+	-------------------------------------------------------
+	rsync -zvr /var/opt/installation/inventory/ /root/temp
+
+		[-z => Compress]
+		[-v => Verbose]
+		[-r => Recursive , to be used when involving directories]
+
+
+	-------------------------------------------------------
+	# Preserve timestamps during Sync using rsync
+	-------------------------------------------------------
+	rsync -zva /var/opt/installation/inventory/ /root/temp/
+
+		[-z => Compress]
+		[-v => Verbose]
+		[-a => archive will recurse if required , preserve users , groups , timestamps , symb link]
+
+	-------------------------------------------------------
+	# Synchronize Files From Local to Remote
+	-------------------------------------------------------
+	rsync -zva /root/temp/ thegeekstuff@192.168.200.10:/home/thegeekstuff/temp/
+		
+		[-z => Compress]
+		[-v => Verbose]
+		[-a => archive will recurse if required , preserve users , groups , timestamps , symb link]
+
+
+	-------------------------------------------------------
+	# Synchronize Files From Local to Remote
+	-------------------------------------------------------
+	rsync -zva thegeekstuff@192.168.200.10:/home/thegeekstuff/temp/ /root/temp/
+
+		[-z => Compress]
+		[-v => Verbose]
+		[-a => archive will recurse if required , preserve users , groups , timestamps , symb link]
+
+	-------------------------------------------------------
+	# Remote shell for Synchronization
+	-------------------------------------------------------
+	Use rsync -e ssh to specify which remote shell to use. 
+
+	rsync -zva -e ssh thegeekstuff@192.168.200.10:/var/lib/rpm /root/temp
+
+	-------------------------------------------------------
+	# Do Not Overwrite the Modified Files at the Destination
+	-------------------------------------------------------
+	rsync -zvau thegeekstuff@192.168.200.10:/var/lib/rpm /root/temp
+
+	-------------------------------------------------------
+	# Synchronize only the Directory Tree Structure (not the files)
+	-------------------------------------------------------
+	rsync -v -d thegeekstuff@192.168.200.10:/var/lib/ .
+
+	-------------------------------------------------------
+	# Delete the Files Created at the Target
+	-------------------------------------------------------
+	rsync -zva --delete thegeekstuff@192.168.200.10:/var/lib/rpm/ .
+
+	-------------------------------------------------------
+	# View the Changes Between Source and Destination
+	-------------------------------------------------------
+	rsync -zvai thegeekstuff@192.168.200.10:/var/lib/rpm/ /root/temp/
+
+	-------------------------------------------------------
+	# Include and Exclude Pattern during File Transfer
+	-------------------------------------------------------
+	rsync -zva --include 'P*' --exclude '*' thegeekstuff@192.168.200.10:/var/lib/rpm/ /root/temp/
+
+	-------------------------------------------------------
+	# Do Not Transfer Large Files
+	-------------------------------------------------------
+	rsync -zva --max-size='100K' thegeekstuff@192.168.200.10:/var/lib/rpm/ /root/temp/
+
+

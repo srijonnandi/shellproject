@@ -1,0 +1,6 @@
+	--------------------------------------------
+	## ping
+	---------
+	What’s happening? pings a server for reachablility
+
+	Indicates if the server is reachable. Mind that it doesn't confirm if the process over a certain port is avaialble.

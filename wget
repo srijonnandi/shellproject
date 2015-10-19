@@ -1,0 +1,78 @@
+	--------------------------------------------
+	## wget (Web get)
+	---------
+	wget is a powerful utility that retrieves files accessible as HTTP or FTP resources and saves them to the local file system
+	Whether you want to mirror an entire website, automatically download music or movies or transfer huge files painlessly in a slow
+	intermittent network connection, wget is for you
+
+	Wget utility only supports HTTP , HTTPS , FTP
+	--------------------------------------------
+
+	--------------------------------------------	
+	EXAMPLES
+	--------------------------------------------	
+
+	--------------------------------------------	
+	#1- To Fetch a file using http protocol
+	--------------------------------------------	
+		wget http://stash.int.corp.sun/projects/IGTPLT/repos/identity/browse/OHS/R3_PRD01/iamap1a.int.corp.sun/ignite.int.corp.sun-ssl.conf	
+
+		
+	--------------------------------------------	
+	#2-	[-O] Get the file to a defined location 
+	--------------------------------------------	
+		wget http://stash.int.corp.sun/projects/IGTPLT/repos/identity/browse/OHS/R3_PRD01/iamap1a.int.corp.sun/ignite.int.corp.sun-ssl.conf	-O /drives/h/temp/test.conf
+
+		
+	--------------------------------------------	
+	#3-	[--user , --password] Supply credentials
+	--------------------------------------------	
+		wget --http-user=narad --http-password=password http://mirrors.hns.net.in/centos/6.3/isos/x86_64/CentOS-6.3-x86_64-LiveDVD.iso
+
+		wget --ftp-user=narad --ftp-password=password ftp://ftp.iinet.net.au/debian/debian-cd/6.0.5/i386/iso-dvd/debian-6.0.5-i386-DVD-1.iso
+	--------------------------------------------	
+	#4-	[-S] Supply headers / certificates /ip address
+	--------------------------------------------	
+ 		wget -S http://ignite.int.corp.sun 
+
+			--2015-07-09 13:32:37--  http://ignite.int.corp.sun/
+			Resolving ignite.int.corp.sun... 10.70.16.225
+			Connecting to ignite.int.corp.sun|10.70.16.225|:80... connected.  	==> connected to the server port 80
+			HTTP request sent, awaiting response... 							==> awaiting response , actually getting redirected
+			  HTTP/1.0 302 Found												==> HTTP 1.0 version and response 302 redirect
+			  Location: https://ignite.int.corp.sun/							==> redirected to https
+			  Server: BigIP														==> server type , it's F5 in this case	
+			  Connection: Keep-Alive											==> keep-alive is set
+			  Content-Length: 0
+			Location: https://ignite.int.corp.sun/ [following]
+			--2015-07-09 13:32:37--  https://ignite.int.corp.sun/
+			Connecting to ignite.int.corp.sun|10.70.16.225|:443... connected.
+			ERROR: cannot verify ignite.int.corp.sun's certificate, issued by `/C=AU/DC=sun/DC=Corp/DC=int/O=Suncorp-Metway Ltd/CN=Suncorp Issuing CA-111':	==> certificate NOT TRUSTED
+			  Self-signed certificate encountered.
+			To connect to ignite.int.corp.sun insecurely, use `--no-check-certificate'.
+
+	--------------------------------------------	
+	#5-	[-S , --no-check-certificate] Supply headers 
+	--------------------------------------------	
+		wget -S http://ignite.int.corp.sun --no-check-certificate
+
+	--------------------------------------------	
+	#6-	Read URLS from a file and Wget on them and  
+	--------------------------------------------	
+		wget -S  -i urlList.txt -o temp_wget.out -a temp_wget.log
+
+	--------------------------------------------	
+	#7-	[-m] Mirror the entire web
+	--------------------------------------------	
+		wget -m http://ginatranpani.googlepages.com
+
+	--------------------------------------------	
+	#8-	[-c] In case of big file download, it may happen sometime to stop download in that case we can resume download the same file where it was left off with -c option.
+	--------------------------------------------	
+		wget -c --output-document downloaded.avi http://myvideos.homepage.com/videos
+
+	--------------------------------------------	
+	#9-	[-b] With -b option you can send download in background immediately after download start and logs are written in /wget/log.txt file.
+	--------------------------------------------	
+		wget -b /wget/log.txt ftp://ftp.iinet.net.au/debian/debian-cd/6.0.5/i386/iso-dvd/debian-6.0.5-i386-DVD-1.iso
+	

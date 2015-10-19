@@ -1,0 +1,41 @@
+	--------------------------------------------
+	## DNS (Domain Naming System)
+	--------------------------------------------
+
+	DNS is a protocol
+	It converts a user-friendly domain name like "howstuffworks.com" into an Internet Protocol (IP) address like 70.42.251.42 that computers use to identify each other on the network.	
+	The proper term for this process is "DNS name resolution"
+
+	--------------------------------------------
+	## DNS Server (Domain Naming System Server)
+	--------------------------------------------
+	This is server manages a massive database that maps domain names to IP addresses.
+
+	--------------------------------------------
+	Few popular TOP level domains
+	--------------------------------------------
+	The following are some common top-level domains:
+	•COM -- commercial Web sites, though open to everyone
+	•NET -- network Web sites, though open to everyone
+	•ORG -- non-profit organization Web sites, though open to everyone
+	•EDU -- restricted to schools and educational organizations
+	•MIL -- restricted to the U.S. military
+	•GOV -- restricted to the U.S. government
+	•US, UK, RU and other two-letter country codes -- each is assigned to a domain name authority in the respective country
+
+	--------------------------------------------
+	Types of DNS Records
+	--------------------------------------------
+	 A
+	 AAAA
+	 CNAME
+	 MX 
+	 PTR
+	 NS
+	 SOA
+	 SRV
+	 TXT
+	 NAPTR
+
+
+??? HOw DNS handles multiple ip address for single hostname

@@ -1,0 +1,72 @@
+	--------------------------------------------
+	## cURL 
+	---------
+
+	Curl is powered by library called libcurl. Unlike wget which is a command line tool
+	curl is a tool to transfer data from or to a server, using one of the supported protocols (DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP).
+
+
+	--------------------------------------------	
+	#1- Get a webpage
+	--------------------------------------------	
+	curl http://www.centos.org
+
+	--GET with Json 
+	curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://hostname/resource
+
+	--GET with XML
+	curl -H "Accept: application/xml" -H "Content-Type: application/xml" -X GET http://hostname/resource
+
+
+	curl -d "username=admin&password=admin&submit=Login" --dump-header headers http://localhost/Login
+	--------------------------------------------	
+	#2- Save the cURL Output to a file
+	--------------------------------------------	
+	curl -o mygettext.html http://www.gnu.org/software/gettext/manual/gettext.html
+
+	--------------------------------------------	
+	#4- Fetch Multiple Files at a time
+	--------------------------------------------	
+	curl -O URL1 -O URL2
+	
+	--------------------------------------------	
+	#5- Follow http 302 re-directions  
+	--------------------------------------------	
+	curl -L http://www.google.com
+	
+	--------------------------------------------	
+	#6-Continue/Resume a Previous Download 
+	--------------------------------------------	
+	curl -C - -O http://www.gnu.org/software/gettext/manual/gettext.html
+	
+	--------------------------------------------	
+	#7-Limit the download rate 
+	--------------------------------------------	
+	curl --limit-rate 1000B -O http://www.gnu.org/software/gettext/manual/gettext.html
+	
+	--------------------------------------------	
+	#8- Pass username password
+	--------------------------------------------	
+	curl -u ftpuser:ftppass -O ftp://ftp_server/public_html/xss.php
+
+	--------------------------------------------	
+	#9- Upload Files to FTP Server
+	--------------------------------------------	
+	curl -u ftpuser:ftppass -T myfile.txt ftp://ftp.testserver.com
+	curl -u ftpuser:ftppass -T "{file1,file2}" ftp://ftp.testserver.com
+
+	--------------------------------------------	
+	#10- Verbose and Trace
+	--------------------------------------------	
+	curl -v -trace http://google.co.in
+
+	--------------------------------------------	
+	#11- Send Mail using SMTP Protocol
+	--------------------------------------------	
+	curl --mail-from blah@test.com --mail-rcpt foo@test.com smtp://mailserver.com
+	--------------------------------------------	
+	
+	--------------------------------------------	
+	#12- Silent page scrapper
+	--------------------------------------------	
+	echo $(curl --silent https://www.archlinux.org/feeds/news/ | sed -e ':a;N;$!ba;s/\n/ /g')
